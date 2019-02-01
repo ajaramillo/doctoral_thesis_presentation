@@ -1,0 +1,34 @@
+\usepackage[algoruled]{algorithm2e}
+
+\renewcommand{\raggedright}{\leftskip=2pt \rightskip=2pt plus 0cm} 
+
+
+%\usepackage[maxcitenames=2,backend=biber,sorting=ynt]{biblatex}
+%\addbibresource{lubric2013.bib}
+
+\newcommand{\citex}[1]{\citeauthor{#1}, \citeyear{#1}}
+
+\usepackage{multirow} %multifilas
+
+\usepackage{booktabs}
+
+\usepackage{multimedia}
+
+\usepackage{bm}
+
+\graphicspath{{figs/}}
+
+\usepackage{color}
+\usepackage{amsmath,amsthm,amsfonts}
+
+\newcommand{\hzerooneOm}{{H_0^1(\Omega)}}
+\newcommand{\hzerooneom}{{H_0^1(\omega)}}
+\newcommand{\honeOm}{{H^1(\Omega)}}
+\newcommand{\honeom}{{H^1(\omega)}}
+\newcommand{\lpOm}[1]{{L^{#1}(\Omega)}}
+\newcommand{\lpom}[1]{{L^{#1}(\omega)}}
+\newcommand{\parder}[2]{\frac{\partial #1}{\partial #2}}
+
+\newcommand{\tm}[1]{\textnormal{\scriptsize{#1}}}
+\newcommand{\pcc}{p_{\textnormal{\scriptsize{cc}}}}
+\newcommand{\pcav}{p_{\textnormal{\scriptsize{cav}}}}
