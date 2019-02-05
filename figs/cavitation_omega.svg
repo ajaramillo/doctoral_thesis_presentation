@@ -25,9 +25,9 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="1.589333"
-     inkscape:cx="282.75077"
-     inkscape:cy="134.34955"
+     inkscape:zoom="2.5516245"
+     inkscape:cx="449.58099"
+     inkscape:cy="101.51884"
      inkscape:document-units="mm"
      inkscape:current-layer="layer1"
      showgrid="false"
@@ -671,13 +671,13 @@
     <text
        xml:space="preserve"
        style="font-style:normal;font-weight:normal;font-size:3.25192451px;line-height:1.25;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.08129811"
-       x="171.77179"
-       y="45.976311"
+       x="171.97917"
+       y="47.116924"
        id="text3555"><tspan
          sodipodi:role="line"
          id="tspan3553"
-         x="171.77179"
-         y="45.976311"
+         x="171.97917"
+         y="47.116924"
          style="stroke-width:0.08129811">cavitated area</tspan></text>
     <text
        id="text3559"
@@ -893,7 +893,7 @@
        font-style="normal"
        stroke-miterlimit="10.433"
        xml:space="preserve"
-       transform="matrix(0.39755783,0,0,-0.39755783,110.46492,333.13622)"
+       transform="matrix(0.39755783,0,0,-0.39755783,71.787762,313.74579)"
        id="g2028"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;letter-spacing:normal;word-spacing:normal;text-anchor:start;fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:1.25767863;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10.43299961;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1">
 <path
@@ -1010,7 +1010,7 @@
        font-style="normal"
        stroke-miterlimit="10.433"
        xml:space="preserve"
-       transform="matrix(0.39755783,0,0,-0.39755783,71.983341,315.94017)"
+       transform="matrix(0.39755783,0,0,-0.39755783,110.45311,334.18998)"
        id="g2723"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;letter-spacing:normal;word-spacing:normal;text-anchor:start;fill:#000000;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:1.25767863;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10.43299961;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1">
 <path

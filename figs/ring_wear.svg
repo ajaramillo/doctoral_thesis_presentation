@@ -24,9 +24,9 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="1.4483503"
-     inkscape:cx="497.60291"
-     inkscape:cy="147.25607"
+     inkscape:zoom="1.1626406"
+     inkscape:cx="558.29403"
+     inkscape:cy="125.17379"
      inkscape:document-units="mm"
      inkscape:current-layer="layer1"
      showgrid="false"
@@ -227,51 +227,51 @@
        sodipodi:nodetypes="ccc" />
     <text
        xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:2.53425765px;line-height:3.39409518px;font-family:'CMU Serif';-inkscape-font-specification:'CMU Serif';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       x="102.22523"
-       y="45.28656"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:3.23442626px;line-height:4.33182096px;font-family:'CMU Serif';-inkscape-font-specification:'CMU Serif';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="101.56079"
+       y="44.205761"
        id="text838"><tspan
          sodipodi:role="line"
          id="tspan836"
-         x="102.22523"
-         y="45.28656"
+         x="101.56079"
+         y="44.205761"
          style="stroke-width:0.26458332px">70 deg</tspan></text>
     <path
        style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.25;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:0.25, 0.25;stroke-dashoffset:0;stroke-opacity:1"
-       d="m 111.59018,42.999998 c 0,0 -2.11806,-2.253076 -5.6209,-2.236588 -3.50285,0.01649 -5.50321,2.295448 -5.50321,2.295448"
+       d="m 112.12697,42.593171 c 0,0 -2.88242,-3.09789 -6.38526,-3.081402 -3.50285,0.01649 -5.744586,2.617282 -5.744586,2.617282"
        id="path842"
        inkscape:connector-curvature="0"
        sodipodi:nodetypes="czc" />
     <text
        xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:3.20188141px;line-height:4.28823423px;font-family:'CMU Serif';-inkscape-font-specification:'CMU Serif';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       x="67.749992"
-       y="9.7169399"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.08650208px;line-height:5.4729948px;font-family:'CMU Serif';-inkscape-font-specification:'CMU Serif';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="63.033012"
+       y="9.9327869"
        id="text846"><tspan
          sodipodi:role="line"
          id="tspan844"
-         x="67.749992"
-         y="9.7169399"
+         x="63.033012"
+         y="9.9327869"
          style="stroke-width:0.26458332px">ring without wear</tspan></text>
     <path
        style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       d="m 61.667022,8.86247 h 5.327181"
+       d="m 56.375352,9.1071727 h 5.327181"
        id="path848"
        inkscape:connector-curvature="0" />
     <path
        inkscape:connector-curvature="0"
        id="path850"
-       d="m 61.667022,12.566638 h 5.327181"
+       d="m 56.375352,12.81134 h 5.327181"
        style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.26458332;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:2.11666654, 1.05833327;stroke-dashoffset:0;stroke-opacity:1" />
     <text
        id="text854"
-       y="13.421103"
-       x="67.964821"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:3.20188141px;line-height:4.28823423px;font-family:'CMU Serif';-inkscape-font-specification:'CMU Serif';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       y="13.63695"
+       x="63.033012"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.08650208px;line-height:5.4729948px;font-family:'CMU Serif';-inkscape-font-specification:'CMU Serif';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        xml:space="preserve"><tspan
          style="stroke-width:0.26458332px"
-         y="13.421103"
-         x="67.964821"
+         y="13.63695"
+         x="63.033012"
          id="tspan852"
          sodipodi:role="line">ring with wear</tspan></text>
     <path
@@ -315,12 +315,12 @@
        style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.26499999;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-start:url(#marker3775);marker-end:url(#marker3785)" />
     <path
        style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.26499999;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#Arrow1Mend)"
-       d="m 60.767757,50.533519 c 0,0 0.219382,-5.139798 0.501444,-5.891963"
+       d="m 60.04363,50.774895 c 0,0 0.219382,-5.139798 0.501444,-5.891963"
        id="path885"
        inkscape:connector-curvature="0" />
     <path
        style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker-end:url(#marker1209)"
-       d="M 60.767757,50.533519 H 55.417806"
+       d="M 60.04363,50.774895 H 54.693679"
        id="path1199"
        inkscape:connector-curvature="0" />
     <g
@@ -334,14 +334,14 @@
        ns0:pdfconverter="pdf2svg"
        ns0:texconverter="pdflatex"
        ns0:version="0.9.1"
-       transform="matrix(0.33584426,0,0,0.33584424,5.0292145,8.3709419)"
-       style="stroke-width:0.39390874">
+       transform="matrix(0.42863183,0,0,0.4286318,-9.9374801,-3.7636134)"
+       style="stroke-width:0.3086378">
       <g
          id="surface1"
-         style="stroke-width:0.39390874">
+         style="stroke-width:0.3086378">
         <g
            id="g1295"
-           style="fill:#000000;fill-opacity:1;stroke-width:0.39390874">
+           style="fill:#000000;fill-opacity:1;stroke-width:0.3086378">
           <path
              id="path1293"
              transform="translate(148.712,134.765)"
@@ -351,7 +351,7 @@
         </g>
         <g
            id="g1299"
-           style="fill:#000000;fill-opacity:1;stroke-width:0.39390874">
+           style="fill:#000000;fill-opacity:1;stroke-width:0.3086378">
           <path
              id="path1297"
              transform="translate(154.406,136.259)"
@@ -363,7 +363,7 @@
     </g>
     <g
        id="g1374"
-       style="stroke-width:0.71068132"
+       style="stroke-width:0.55683738"
        ns0:jacobian_sqrt="0.238678"
        inkscapeversion="0.92.4"
        ns0:alignment="middle center"
@@ -373,13 +373,13 @@
        ns0:pdfconverter="pdf2svg"
        ns0:texconverter="pdflatex"
        ns0:version="0.9.1"
-       transform="matrix(0.33584393,0,0,0.33584393,12.372646,1.0611217)">
+       transform="matrix(0.42863143,0,0,0.42863143,-2.5911356,-11.066898)">
       <g
          id="g1372"
-         style="stroke-width:0.67683935">
+         style="stroke-width:0.5303213">
         <g
            id="g1366"
-           style="fill:#000000;fill-opacity:1;stroke-width:0.71068132">
+           style="fill:#000000;fill-opacity:1;stroke-width:0.55683738">
           <path
              id="path1364"
              transform="translate(148.712,134.765)"
@@ -389,7 +389,7 @@
         </g>
         <g
            id="g1370"
-           style="fill:#000000;fill-opacity:1;stroke-width:0.71068132">
+           style="fill:#000000;fill-opacity:1;stroke-width:0.55683738">
           <path
              id="path1368"
              transform="translate(154.406,136.259)"
@@ -580,29 +580,29 @@
          style="stroke-width:0.26458332px">1.5</tspan></text>
     <text
        xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:3.22923756px;line-height:4.32487154px;font-family:'CMU Serif';-inkscape-font-specification:'CMU Serif';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       x="162.81047"
-       y="7.5549679"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.12141609px;line-height:5.51975393px;font-family:'CMU Serif';-inkscape-font-specification:'CMU Serif';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="161.29733"
+       y="7.848495"
        id="text2493"><tspan
          sodipodi:role="line"
          id="tspan2491"
-         x="162.81047"
-         y="7.5549679"
+         x="161.29733"
+         y="7.848495"
          style="stroke-width:0.26458332px">microns</tspan></text>
     <text
        xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:3.47764826px;line-height:4.65756464px;font-family:'CMU Serif';-inkscape-font-specification:'CMU Serif';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       x="275.31256"
-       y="89.30307"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.43845844px;line-height:5.94436359px;font-family:'CMU Serif';-inkscape-font-specification:'CMU Serif';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="274.50598"
+       y="89.515411"
        id="text2497"><tspan
          sodipodi:role="line"
          id="tspan2495"
-         x="275.31256"
-         y="89.30307"
+         x="274.50598"
+         y="89.515411"
          style="stroke-width:0.26458332px">mm</tspan></text>
     <g
-       style="stroke-width:0.39390874"
-       transform="matrix(0.33584426,0,0,0.33584424,114.44715,0.51574035)"
+       style="stroke-width:0.3086378"
+       transform="matrix(0.42863182,0,0,0.4286318,100.20459,-11.86019)"
        ns0:version="0.9.1"
        ns0:texconverter="pdflatex"
        ns0:pdfconverter="pdf2svg"
@@ -614,10 +614,10 @@
        ns0:jacobian_sqrt="0.132292"
        id="g2509">
       <g
-         style="stroke-width:0.39390874"
+         style="stroke-width:0.3086378"
          id="g2507">
         <g
-           style="fill:#000000;fill-opacity:1;stroke-width:0.39390874"
+           style="fill:#000000;fill-opacity:1;stroke-width:0.3086378"
            id="g2501">
           <path
              inkscape:connector-curvature="0"
@@ -627,7 +627,7 @@
              id="path2499" />
         </g>
         <g
-           style="fill:#000000;fill-opacity:1;stroke-width:0.39390874"
+           style="fill:#000000;fill-opacity:1;stroke-width:0.3086378"
            id="g2505">
           <path
              inkscape:connector-curvature="0"
@@ -649,12 +649,14 @@
        ns0:pdfconverter="pdf2svg"
        ns0:texconverter="pdflatex"
        ns0:version="0.9.1"
-       transform="matrix(0.335844,0,0,0.335844,172.03834,46.391842)">
+       transform="matrix(0.4286315,0,0,0.4286315,157.80883,34.022443)"
+       style="stroke-width:0.78352618">
       <g
-         id="g2625">
+         id="g2625"
+         style="stroke-width:0.78352618">
         <g
            id="g2619"
-           style="fill:#000000;fill-opacity:1">
+           style="fill:#000000;fill-opacity:1;stroke-width:0.78352618">
           <path
              id="path2617"
              transform="translate(148.712,134.765)"
@@ -664,7 +666,7 @@
         </g>
         <g
            id="g2623"
-           style="fill:#000000;fill-opacity:1">
+           style="fill:#000000;fill-opacity:1;stroke-width:0.78352618">
           <path
              id="path2621"
              transform="translate(154.406,136.259)"
