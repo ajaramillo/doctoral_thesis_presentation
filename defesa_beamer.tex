@@ -49,11 +49,12 @@
 
 %==============================================================
 
-
-\begin{frame}
+\setcounter{showSlideNumbers}{0}
+\begin{frame}[noframenumbering]
 \frametitle{Layout}
 \tableofcontents[hideallsubsections]
 \end{frame}
+\setcounter{showSlideNumbers}{1}
 
 \subsection{Motivation}
 
@@ -143,7 +144,7 @@ p&=p_\partial&&\text{on } \partial \Omega~.
 \begin{frame}
 \frametitle{The Elrod-Adams cavitation model}
 \vspace*{1.0cm}
-Find $p\geq p_{\text{cav}}$ and $0\leq \theta \leq 1$ such that: $$Q=\frac{h^3}{12\,\mu} \nabla p - \frac{\mathbf{U}}{2}h\theta~,$$ accomplishes (+ b.c.): $$\text{div} \left( Q \right) =\parder{h\theta }{t}\qquad \mbox{and}\qquad p(1-\theta)=0 \qquad \mbox{in }  \Omega~.$$
+Taking $p_{\text{cav}}=0$. Find $p\geq 0$ and $0\leq \theta \leq 1$ such that: $$Q=\frac{h^3}{12\,\mu} \nabla p - \frac{\mathbf{U}}{2}h\theta~,$$ accomplishes (+ b.c.): $$\text{div} \left( Q \right) =\parder{h\theta }{t}\qquad \mbox{and}\qquad p(1-\theta)=0 \qquad \mbox{in }  \Omega~.$$
 
 \begin{figure}
 	\centering
@@ -194,20 +195,11 @@ subsectionstyle=show/shaded/hide
 \vspace*{1.0cm}
 \begin{figure}
 	\centering
-	\includegraphics[scale=0.8]{cav_ring2.pdf}
-		\caption{\color{ExecusharesGrey}\tiny Adapted from the work of Dellis, P.}
+	\includegraphics[scale=1]{cav_ring2a.pdf}
+	\caption{\color{ExecusharesGrey}\tiny Adapted from the work of Dellis, P.}
 \end{figure}
 \end{frame}
 
-%=============================================================
-\begin{frame}
-\frametitle{Separation boundary in a Piston-Ring}
-\vspace*{1.0cm}
-\begin{figure}
-	\centering
-	\includegraphics[scale=1.0]{omega_piston_extension_elrod.pdf}
-\end{figure}
-\end{frame}
 
 \setcounter{showSlideNumbers}{0}
 \subsection{Extension of the Elrod-Adams model}
@@ -235,7 +227,7 @@ p&\geq \only<1>{0}
 \only<2>{(p-{\color{red}T(\theta)})(1-\theta)}&=0 && \text{in } \Omega\\
 p &= 0 && \text{on } \Gamma_0\\
 p &= \pcc && \text{on } \Gamma_+\\
-\theta &= \theta_{\textnormal{in}} && \text{on } \partial\Omega
+\theta &= \theta_{\textnormal{in}} && \text{on } \partial\Omega_\textnormal{in}
 \end{align*} 
 \end{minipage}%
 \hspace*{0.3cm}
@@ -248,7 +240,7 @@ p &= \pcc && \text{on } \Gamma_+\\
 0 				& \text{ if } \mathbf{x} \in \Omega_0'\cup \Omega_+
 \end{cases},
 \end{equation*}
-This corresponds to the classical Elrod-Adams model for $T\equiv 0$ and $\pcc=0$.\\
+This corresponds to the classical Elrod-Adams model for $\pcc=0$.\\
 
 It is possible to prove that this model is ill-posed. An additional condition for the pressure gradient at the separation boundary $\partial \Omega_0^\tm{r}$ is required. Here:
 
@@ -386,17 +378,17 @@ subsectionstyle=show/shaded/hide
 \end{figure}
 
 \begin{table}\centering {\small
-		\begin{tabular}{cccccccccc}
+		\begin{tabular}{ccccccccc}
 			\toprule
 			\multirow{2}{*}{} &
 			
-			\multicolumn{7}{c}{$\Delta h$ (microns)} \\
-			& 0.5 & 1.0& 1.5& 2.0 & 2.5& 3.0 & 3.5 &3.91& 4.0-8.0\\
+			\multicolumn{6}{c}{$\Delta h$ (microns)} \\
+			& 0.5 & 1.0& 1.5& 2.0 & 2.5& 3.0 & 3.5 & 4.0-8.0\\
 			\midrule
-			$\delta^\tm{max}$ (microns) & 0.025 &0.035 & 0.040 & 0.045 & 0.050 & 0.055 & 0.025& 0.005&0\\
+			$\delta^\tm{max}$ (microns) & 0.020 &0.030 & 0.035 & 0.040 & 0.045 & 0.050 & 0.020& 0\\
 			\bottomrule
 	\end{tabular}}
-	\caption{Minimum value of $\delta$ for which the simulations fail for every $\delta\geq \delta_\tm{max}$.}\label{tab:hmax}
+	\caption{Maximum value of $\delta$ for blow-by is not observed.}\label{tab:hmax}
 \end{table}
 \end{frame}
 
@@ -404,7 +396,19 @@ subsectionstyle=show/shaded/hide
 
 \setcounter{showSlideNumbers}{0}
 \section{Reynolds-Rayleigh-Plesset model: well-posedness}
+\setcounter{showSlideNumbers}{1}
 
+%==============================================================
+\begin{frame}
+\frametitle{Motivation}
+\begin{itemize}
+	\item The Reynolds-Rayleigh-Plesset coupled system captures the physics of gaseous cavitation.
+	\item This type of models are used in several numerical works to model cavitation along a flow equation (e.g., Navier-Stokes/Reynolds equations in the Software FLUENT).
+	
+\end{itemize}
+\end{frame}
+
+\setcounter{showSlideNumbers}{0}
 \begin{frame}[noframenumbering]
 \tableofcontents[
 currentsection,
@@ -414,15 +418,7 @@ subsectionstyle=show/shaded/hide
 \end{frame}
 \setcounter{showSlideNumbers}{1}
 
-%==============================================================
-\begin{frame}
-\frametitle{Motivation}
-\begin{itemize}
-	\item The Reynolds-Rayleigh-Plesset coupled system captures the physics of gaseous cavitation.
-	\item This type of models are used in several numerical works to model cavitation along a flow equation (e.g., Navier-Stokes/Reynolds equations in the Software FLUENT).
 
-\end{itemize}
-\end{frame}
 
 \subsection{The Reynolds-Rayleigh-Plesset coupling}
 
@@ -505,18 +501,16 @@ p&=0 \qquad\mbox{on } \partial \Omega~.
 %==============================================================
 
 \begin{frame}
-\frametitle{Well-posedness of the coupled system}
+\frametitle{Well-posedness of the coupled system}\vspace*{0.8cm}
 \begin{equation*}
 	f_1\left(R\right)=p_b-\frac{2\sigma}{R}-p_\partial~,
-\end{equation*}
-\begin{align*}
-f_2\left(R\right)&=4\left(\frac{\mu_\ell+\kappa^s/R}{R^2}\right)~,&f_3\left(R\right)&=\frac{1}{12}\frac{(1-\alpha\left(R\right))\rho_\ell+\alpha\left(R\right)\rho_g}{(1-\alpha\left(R\right))\mu_\ell+\alpha\left(R\right)\mu_g}~,\\ f_4\left(R\right)&=\frac{1}{2}\left[\rho_\ell+\alpha\left(R\right)\left(\rho_g-\rho_\ell\right)\right]~,&f_5\left(R\right)&=f_4'\left(\alpha\left(R\right)\right)\,\alpha'\left(R\right)~.
-\end{align*}
-
+\end{equation*}\vspace*{-0.3cm}
 \begin{itemize}
-	\item[H1:] $f_1\in C^2\left(\mathbb{R}^+_*;\mathbb{R}\right)$, $${\color{red}\exists \bar{R},\delta_1\in\mathbb{R}^+_*~\text{s.t.}~f_1\left(\bar{R}\right)=0~\text{and}~f'_1\left(R\right)<0\, \forall R \in [\bar{R}-\delta_1,\bar{R}+\delta_1]}$$
+	\item[H1:] $f_1\in C^2\left(\mathbb{R}^+_*;\mathbb{R}\right)$, ${\color{red}\exists \bar{R},\delta_1\in\mathbb{R}^+_*~\text{s.t.}~f_1\left(\bar{R}\right)=0~\text{and}~f'_1\left(R\right)<0\, \forall R \in [\bar{R}-\delta_1,\bar{R}+\delta_1]}$
 \end{itemize}
-Additional hypotheses on the $f_i$ functions are made.
+	\begin{figure}
+	\includegraphics[scale=0.6]{peq_req2}
+\end{figure}
 \end{frame} 
 
 %==============================================================
@@ -567,7 +561,7 @@ Along suitable i.c. for $R$ and $\parder{R}{t}$. In order to use the Cauchy-Lips
 \begin{center}
  {\color{red}$p=A\left(R,\parder{R}{t}\right)$} ,
 \end{center}
-by means of the Reynolds equation. The regularity of the mapping $A$ comes from the Lax-Milgram Theorem and a Sobolev Embedding (Adams, 1975).
+by means of the Reynolds equation and the Lax-Milgram Theorem. The regularity of the mapping $A$ comes from a Sobolev Embedding (Adams, 1975).
 \end{frame} 
 
 %==============================================================
@@ -576,16 +570,16 @@ by means of the Reynolds equation. The regularity of the mapping $A$ comes from 
 Then, the problem \eqref{eq:abstract-rp1}-\eqref{eq:abstract-reynolds1} can be rewritten as
 \begin{equation}
 \begin{split}
-\frac{d\tilde{R}}{dt}&=F(\tilde{R})~,\\
+\frac{d\tilde{R}}{dt}&=\mathcal{F}(\tilde{R})~,\\
 \tilde{R}(0)&=\tilde{R}_0~,
 \end{split}\label{eq:problem-rewritten}
 \end{equation}
-where $\tilde{R}=\left(R_1,R_2\right)=\left(R,\parder{R}{t}\right)$, $\tilde{R}_0=(r_1,r_2)\in Q\times \cont$ and $F:Q\times \cont\mapsto \left(\cont\right)^2$ with
+where $\tilde{R}=\left(R_1,R_2\right)=\left(R,\parder{R}{t}\right)$, $\tilde{R}_0=(r_1,r_2)\in Q\times \cont$ and $\mathcal{F}:Q\times \cont\mapsto \left(\cont\right)^2$ with
 \begin{equation}
-F(R_1,R_2)=\left(
-R_2,~-\frac{3}{2}\frac{R_2^2}{R_1}-R_2f_2\left(R_1\right)+\frac{f_1\left(R_1\right)-A\left(R_1,R_2\right)}{R_1}\right)~.
+\mathcal{F}(R_1,R_2)=\left(
+R_2,~-\frac{3}{2}\frac{R_2^2}{R_1}-R_2f_2\left(R_1\right)+\frac{f_1\left(R_1\right)-A\left(R_1,R_2\right)}{R_1}\right)~,
 \end{equation}
-Thus, the Cauchy-Lipschitz Theorem implies the local existence result:
+and $Q=\{R\in C(\bar{\Omega}):R(\mathbf{x})>0~\forall \mathbf{x}\in \bar{\Omega} \}$. Thus, the Cauchy-Lipschitz Theorem implies the local existence result:
 \begin{theorem}There exists $T>0$ such that the  problem \eqref{eq:problem-rewritten} has a unique solution in $C^3\left([0,T];Q\times \cont\right)$.
 \end{theorem}
 \end{frame}
@@ -595,14 +589,14 @@ Thus, the Cauchy-Lipschitz Theorem implies the local existence result:
 \frametitle{Local existence in time: without inertial terms}
 \vspace*{0.6cm}
 \begin{equation}
-\parder{R}{t}=\frac{f_1\left(R\right)-A\left(R,\parder{R}{t}\right)}{R\,f_2\left(R\right)}=\Pi\left(R,\parder{R}{t}\right)\pause=G(R)~,\label{eq:abstract-rp-inertialess}
+\parder{R}{t}=\frac{f_1\left(R\right)-A\left(R,\parder{R}{t}\right)}{R\,f_2\left(R\right)}=\Pi\left(R,\parder{R}{t}\right)\pause=\mathcal{G}(R)~,\label{eq:abstract-rp-inertialess}
 \end{equation}
-by means of the Fredholm Alternative Theorem one proves that there exists a unique $G\left(R\right)\in \cont$ such that $G\left(R\right)=\Pi\left(R,G\left(R\right)\right),$ and the mapping $G$ is of class $C^2$.
+by means of the Fredholm Alternative Theorem one proves that there exists a unique $\mathcal{G}\left(R\right)\in \cont$ such that $\mathcal{G}\left(R\right)=\Pi\left(R,\mathcal{G}\left(R\right)\right),$ and the mapping $\mathcal{G}$ is of class $C^2$.
 \begin{theorem}There exists $T>0$ such that  problem \eqref{eq:abstract-reynolds1}-\eqref{eq:abstract-rp-inertialess} with i.c. $R\left(\cdot,0\right)=r_1$ in $\Omega$ has a unique solution in $C^3\left([0,T];Q\right)$.
 \end{theorem}
 The result follows directly from applying the Cauchy-Lipschitz Theorem to the equivalent evolution problem
 \begin{equation}
-\parder{R}{t}=G(R)~,\label{eq:ev-problem-G}
+\parder{R}{t}=\mathcal{G}(R)~,\label{eq:ev-problem-G}
 \end{equation}
 along the initial condition written above.
 \end{frame} 
@@ -641,6 +635,16 @@ Along suitable i.c. for $R$ and $\parder{R}{t}$.
 
 %==============================================================
 
+%==============================================================
+\begin{frame}
+\frametitle{The stationary problem}\vspace*{0.5cm}
+Let us write $h=h_0+h^+$ with $h_0=\underset{\Omega}{\essinf{\,h}}$.
+\begin{figure}[h]
+	\includegraphics[scale=1]{drawing_h_f1.pdf}
+\end{figure}
+\end{frame} 
+
+%==============================================================
 \begin{frame}
 \frametitle{The stationary problem}
 
@@ -648,7 +652,7 @@ Observe that a stationary solution $(R_s,p_s)$ of problem \eqref{eq:abstract-rp1
 \begin{equation*}
 p_s=f_1\left(R_s\right)~.
 \end{equation*}
-Writing $h=h_0+h^+$ with $h_0=\underset{\Omega}{\essinf{\,h}}$, $(R_s,p_s)$ is solution of the system
+The pair $(R_s,p_s)$ is solution of the system
 \begin{nalign}
 	\nabla\cdot \left(\left(h_0+h^+\right)^3f_3\left(R_s\right)\nabla p_s\right)&=\nabla\cdot\left(\mathbf{U}\left(h_0+h^+\right)f_4\left(R_s\right)\right)&&\textnormal{ in } \Omega,\\
 	p_s&=f_1\left(R_s\right)&&\textnormal{ in } \Omega~,\\
@@ -657,16 +661,6 @@ Writing $h=h_0+h^+$ with $h_0=\underset{\Omega}{\essinf{\,h}}$, $(R_s,p_s)$ is s
 	\label{eq:problem-stationary}
 \end{nalign}
 Observe that if $\mathbf{U}=0$ or $h^+=0$ then $\left(R_s,p_s\right)=\left(\bar{R},0\right)$ is solution of \eqref{eq:problem-stationary}.
-
-
-\end{frame} 
-
-\begin{frame}
-\frametitle{The stationary problem}
-
-\begin{figure}[h]
-	\includegraphics[scale=0.85]{drawing_h_f1.pdf}
-\end{figure}
 
 \end{frame} 
 
@@ -709,6 +703,7 @@ Both results follow from the fact that for $\mathbf{U}=0$ or $h^+=0$ there exist
 
 \begin{frame}
 \frametitle{Stability of stationary solutions}
+
 \begin{figure}
 	\includegraphics[scale=0.85]{stability.pdf}
 \end{figure}
@@ -721,56 +716,51 @@ Both results follow from the fact that for $\mathbf{U}=0$ or $h^+=0$ there exist
 \vspace*{0.5cm}
 \begin{equation}
 \begin{split}
-\frac{d\tilde{R}}{dt}&=F(\tilde{R})~,\\
-\tilde{R}(0)&=\tilde{R}_0~,
+\frac{d\tilde{R}}{dt}&=\mathcal{F}(\tilde{R})~,\\
+\tilde{R}(0)&=\tilde{R}_0~.
 \end{split}
 \end{equation}
-where $\tilde{R}_0=\begin{pmatrix}
-{r}_1\\ {r}_2
-\end{pmatrix}\in Q$ and $F:Q\times \cont\mapsto \left(\cont\right)^2$ with
-\begin{equation}
-F(R_1,R_2)=\left(
-R_2,~-\frac{3}{2}\frac{R_2^2}{R_1}-R_2f_2\left(R_1\right)+\frac{f_1\left(R_1\right)-A\left(R_1,R_2\right)}{R_1}\right)~.
-\end{equation}
-We denote by $\mathcal{L}_F$ the Fréchet derivative of $F$ at $\left(R_1,R_2\right)=\left(R_s,0\right)$, i.e.,
+Let us denote by $\mathcal{L}_\mathcal{F}$ the Fréchet derivative of $\mathcal{F}$ at $\left(R_1,R_2\right)=\left(R_s,0\right)$, i.e.,
 \begin{equation}
 \begin{array}{cccl}
-\mathcal{L}_F:&\left(\cont\right)^2&\longmapsto& \left(\cont\right)^2\\
-&(S_1,S_2)& \longmapsto & \textnormal{D}F\left(R_s,0\right)\left(S_1,S_2\right)~.\label{eq:jacobian_inertia}
+\mathcal{L}_\mathcal{F}:&\left(\cont\right)^2&\longmapsto& \left(\cont\right)^2\\
+&(S_1,S_2)& \longmapsto & \textnormal{D}\mathcal{F}\left(R_s,0\right)\left(S_1,S_2\right)~.\label{eq:jacobian_inertia}
 \end{array}
 \end{equation} 
-It is shown that, for some particular cases, the spectrum of $\mathcal{L}_F$ is such that $$\mbox{Re}\left(\lambda\right)<0\qquad \forall \lambda\in \Sp{\mathcal{L}_F}~.$$
+It is shown that, for some particular cases, the spectrum of $\mathcal{L}_\mathcal{F}$ is such that $$\mbox{Re}\left(\lambda\right)<0\qquad \forall \lambda\in \Sp{\mathcal{L}_\mathcal{F}(R_s,p_s)}~.$$
+{\color{red}
+Let us relax the notation: $\mathcal{L}_\mathcal{F}(R_s,p_s)\rightarrow \mathcal{L}_\mathcal{F}$.}
 \end{frame}
 
 
 
 %==============================================================
 
-\begin{frame}
-\frametitle{Stability with inertial terms}\vspace*{0.5cm}
-For $h^+=0$ or $\mathbf{U}=0$ one has
-\begin{equation}\label{eq:L_F}
-\mathcal{L}_F\left(S_1,S_2\right)=B\begin{pmatrix}
-S_1\\S_2
-\end{pmatrix}-b_r\begin{pmatrix}
-0\\\pi_1\left(S_1\right)+\pi_2\left(S_2\right)
-\end{pmatrix},
-\end{equation}
-where $B=\begin{pmatrix}0&1\\-b_1&-b_2
-\end{pmatrix}$, $\pi_1(S_1)$ is the solution of:
-\begin{nalign}
-	-b_3\nabla\cdot \left(h^3 \,\nabla \pi_1\left(S_1\right)\right)&=b_4\nabla\cdot \left(\mathbf{U}\,hS_1\right)&&\textnormal{ in }  \Omega~,\\
-	\pi_1\left(S_1\right)&=0 &&\textnormal{ on } \partial \Omega~,
-	\label{eq:pi1-triv-case}
-\end{nalign}
-and $\pi_2(S_1)$ is the solution of:
-\begin{nalign}
-	-\nabla\cdot \left(h^3f_3\left(R_s\right) \,\nabla \pi_2\left(S_2\right)\right)&=-hf_5\left(R_s\right)S_2&&\textnormal{ in }  \Omega~,\\
-	\pi_2\left(S_2\right)&=0 &&\textnormal{ on } \partial \Omega~.
-	\label{eq:def:pi2}
-\end{nalign}
-Denote by $\{\lambda_1^B,\lambda_2^B\}$ the set of eigenvalues of $B$ and notice that $\mbox{Re}\left(\lambda_1^B\right)<0$ and $\mbox{Re}\left(\lambda_2^B\right)<0$.
-\end{frame}
+%\begin{frame}
+%\frametitle{Stability with inertial terms}\vspace*{0.5cm}
+%For $h^+=0$ or $\mathbf{U}=0$ one has
+%\begin{equation}\label{eq:L_F}
+%\mathcal{L}_F\left(S_1,S_2\right)=B\begin{pmatrix}
+%S_1\\S_2
+%\end{pmatrix}-b_r\begin{pmatrix}
+%0\\\pi_1\left(S_1\right)+\pi_2\left(S_2\right)
+%\end{pmatrix},
+%\end{equation}
+%where $B=\begin{pmatrix}0&1\\-b_1&-b_2
+%\end{pmatrix}$, $\pi_1(S_1)$ is the solution of:
+%\begin{nalign}
+%	-b_3\nabla\cdot \left(h^3 \,\nabla \pi_1\left(S_1\right)\right)&=b_4\nabla\cdot \left(\mathbf{U}\,hS_1\right)&&\textnormal{ in }  \Omega~,\\
+%	\pi_1\left(S_1\right)&=0 &&\textnormal{ on } \partial \Omega~,
+%	\label{eq:pi1-triv-case}
+%\end{nalign}
+%and $\pi_2(S_1)$ is the solution of:
+%\begin{nalign}
+%	-\nabla\cdot \left(h^3f_3\left(R_s\right) \,\nabla \pi_2\left(S_2\right)\right)&=-hf_5\left(R_s\right)S_2&&\textnormal{ in }  \Omega~,\\
+%	\pi_2\left(S_2\right)&=0 &&\textnormal{ on } \partial \Omega~.
+%	\label{eq:def:pi2}
+%\end{nalign}
+%Denote by $\{\lambda_1^B,\lambda_2^B\}$ the set of eigenvalues of $B$ and notice that $\mbox{Re}\left(\lambda_1^B\right)<0$ and $\mbox{Re}\left(\lambda_2^B\right)<0$.
+%\end{frame}
 
 %==============================================================
 
@@ -780,9 +770,9 @@ Denote by $\{\lambda_1^B,\lambda_2^B\}$ the set of eigenvalues of $B$ and notice
 \begin{lemma}\label{lemma:spec-L_F}
 	Let $h^+=0$ or $\mathbf{U}=0$. Then
 	\begin{equation}
-	\Sp{\mathcal{L}_F}\subset \Vp{\mathcal{L}_F}\cup \{\lambda_1^B,\lambda_2^B\}.
+	\Sp{\mathcal{L}_\mathcal{F}}\subset \Vp{\mathcal{L}_\mathcal{F}}\cup \{\lambda_1^B,\lambda_2^B\}.
 	\end{equation}
-	Moreover if $\lambda\in \Vp{\mathcal{L}_F}\setminus\{\lambda_1^B,\lambda_2^B\}$ with associated eigenfunction $\left(S_1,S_2\right)\in\cont^2$ then $\left(S_1,S_2\right)\in\hzero^2$, $S_2=\lambda S_1$ and $S_1$ is solution of the problem
+	Moreover if $\lambda\in \Vp{\mathcal{L}_\mathcal{F}}\setminus\{\lambda_1^B,\lambda_2^B\}$ with associated eigenfunction $\left(S_1,S_2\right)\in\cont^2$ then $\left(S_1,S_2\right)\in\hzero^2$, $S_2=\lambda S_1$ and $S_1$ is solution of the problem
 	\begin{align*}
 	\frac{b_3}{b_r}\xi\left(\lambda\right)\nabla\cdot\left(h^3\nabla S_1\right)&=b_4\, \mathbf{U}\cdot\nabla\left(hS_1\right)+\lambda\, b_5 h\, S_1 && \textnormal{in }\Omega,\\
 	S_1&=0&&\textnormal{on }\partial\Omega,
@@ -798,8 +788,8 @@ Denote by $\{\lambda_1^B,\lambda_2^B\}$ the set of eigenvalues of $B$ and notice
 \frametitle{Stability with inertial terms}
 \begin{theorem}\label{theo:stabilite-avec-inertie-h-fixe} Let $h\in B_{m_0,M_0}$, $0<m_0<M_0$ (as in Theorem \ref{theo:existence_h_fix}). Then there exists $\epsilon\left(h\right)>0$ s.t. if $\norm{\mathbf{U}}{\infty}<\epsilon$ the solution $\left(R_s,p_s\right)$ of problem \eqref{eq:problem-stationary} is asymptotically stable for the evolution problem \eqref{eq:problem-rewritten}.
 \end{theorem}\bigskip
-\textbf{Step 1}: Take $\mathbf{U}=0$. Based in the previous Lemma: it is enough to study $\Vp{\mathcal{L}_F}$, and it is possible to prove that  $\mbox{Re}\left(\lambda\right)<0$ $\forall \lambda \in \Vp{\mathcal{L}_F}$.\\ \bigskip
-\textbf{Step 2}: From Theorem \ref{theo:existence_h_fix} the mapping $\mathbf{U}\mapsto R_s\left(\mathbf{U}\right)$ is continuous in a neighborhood $V_1\ni 0$ in $\mathbb{R}^2$, thus if $\mathbf{U}\rightarrow 0$ in $\mathbb{R}^2$ then $\norm{\textnormal{D}F\left(R_s\left(\mathbf{U}\right),0\right)-\textnormal{D}F\left(\bar{R},0\right)}{}\rightarrow 0$ in the space of linear continuous operators from $\cont^2$ into itself. This, plus the continuity of the spectrum give us the result.
+\textbf{Step 1}: Take $\mathbf{U}=0$. Based in the previous Lemma: it is enough to study $\Vp{\mathcal{L}_\mathcal{F}}$, and it is possible to prove that  $\mbox{Re}\left(\lambda\right)<0$ $\forall \lambda \in \Vp{\mathcal{L}_\mathcal{F}}$.\\ \bigskip
+\textbf{Step 2}: From Theorem \ref{theo:existence_h_fix} the mapping $\mathbf{U}\mapsto R_s\left(\mathbf{U}\right)$ is continuous in a neighborhood $V_1\ni 0$ in $\mathbb{R}^2$, thus if $\mathbf{U}\rightarrow 0$ in $\mathbb{R}^2$ then $\norm{\textnormal{D}\mathcal{F}\left(R_s\left(\mathbf{U}\right),0\right)-\textnormal{D}\mathcal{F}\left(\bar{R},0\right)}{}\rightarrow 0$ in the space of linear continuous operators from $\cont^2$ into itself. This (+ the continuity of the spectrum) give us the result.
 \end{frame}
 
 %==============================================================
@@ -808,7 +798,7 @@ Denote by $\{\lambda_1^B,\lambda_2^B\}$ the set of eigenvalues of $B$ and notice
 \frametitle{Stability with inertial terms}
 \begin{theorem}\label{theo:instabilite-avec-inertie-U-fixe} Set $h^+=0$ and consider the one-dimensional case ($N=1$). Then there exists $M>0$ such that if $\norm{\mathbf{U}}{\infty}>M$ the solution $\left(R_s,p_s\right)$ of problem \eqref{eq:problem-stationary} is asymptotically unstable for the evolution problem \eqref{eq:problem-rewritten}.
 \end{theorem}\bigskip
-It is shown that there exists $\lambda\in \Vp{\mathcal{L}_F}$ such that $\mbox{Re}(\lambda)>0$ for $\mathbf{U}$ big enough.
+It is shown that there exists $\lambda\in \Vp{\mathcal{L}_\mathcal{F}}$ such that $\mbox{Re}(\lambda)>0$ for $\mathbf{U}$ big enough.
 \end{frame}
 
 %==============================================================
@@ -816,13 +806,13 @@ It is shown that there exists $\lambda\in \Vp{\mathcal{L}_F}$ such that $\mbox{R
 \begin{frame}\frametitle{Stability without inertial terms}
 Recalling the evolution problem
 \begin{equation}
-\parder{R}{t}=G(R)=\Pi\left(R,G\left(R\right)\right)~,
+\parder{R}{t}=\mathcal{G}(R)=\Pi\left(R,\mathcal{G}\left(R\right)\right)~,
 \end{equation}
 with i.c. $R\left(\cdot,0\right)=r_1$ in $\Omega$. We denote the derivative
 \begin{equation}
 \begin{array}{cccl}
-\mathcal{L}_G:&\cont&\longmapsto& \cont\\
-&w& \longmapsto & \textnormal{D}\,G\left(R_s\right)\left(w\right)~.\label{eq:def-L_G}
+\mathcal{L}_\mathcal{G}:&\cont&\longmapsto& \cont\\
+&w& \longmapsto & \textnormal{D}\,\mathcal{G}\left(R_s\right)\left(w\right)~.\label{eq:def-L_G}
 \end{array}
 \end{equation} 
 \bigskip
@@ -839,7 +829,7 @@ Notice that the existence theorems (\ref{theo:existence_U_fix}) and (\ref{theo:e
 \begin{theorem}\label{theo:stability-sans-inertie-U-fixe} For every $U\in \mathbb{R}^2$ there exists $\epsilon=\epsilon\left(\mathbf{U}\right)>0$ s.t. if $\norm{h^+}{\infty}<\epsilon$, then the solution $\left(R_s,p_s\right)$ of problem \eqref{eq:problem-stationary} is asymptotically stable for the evolution problem \eqref{eq:abstract-reynolds1}-\eqref{eq:abstract-rp-inertialess} along the i.c. $R\left(\cdot,0\right)=r_1$ in $\Omega$
 \end{theorem}\bigskip
 
-One shows that $\mbox{Re}\left(\lambda\right)<0~\forall \lambda\in \Vp{\mathcal{L}_F}$ based in a result similar to Lemma \ref{lemma:spec-L_F}.\\
+One shows that $\mbox{Re}\left(\lambda\right)<0~\forall \lambda\in \Sp{\mathcal{L}_\mathcal{G}}$ based in a result similar to Lemma \ref{lemma:spec-L_F}.\\
 \bigskip
 Recall that there is no analogous result of Theorem \ref{theo:stability-sans-inertie-U-fixe} for the case including the inertial terms!
 \end{frame}
@@ -989,7 +979,7 @@ subsectionstyle=show/shaded/hide
 Find $p(\mathbf{x},t)$ and $R(\mathbf{x},t)>0$ such that:
 \begin{align*}
 \nabla\cdot\left(\frac{\rho h^3}{12\mu }\nabla p-\frac{\mathbf{U}}{2}\rho h \right)&=\rho \parder{h}{t}+h \rho'(R)\parder{R}{t}&&R \longrightarrow p~,\\
-\rho_\ell\left(\frac{3}{2}\left(\parder{R}{t}\right)^2+R\pardertwo{R}{t}\right)&=p_b-\frac{2\sigma}{R}-p-\left(\mu_\ell+\frac{\kappa^s}{R}\right)\frac{4}{R}\parder{R}{t}&&p\longrightarrow R~.
+\rho_\ell\left(\frac{3}{2}\left(\parderD{R}{t}\right)^2+R\parderDtwo{R}{t}\right)&=p_b-\frac{2\sigma}{R}-p-\left(\mu_\ell+\frac{\kappa^s}{R}\right)\frac{4}{R}\parderD{R}{t}&&p\longrightarrow R~.
 \end{align*}
 
 Including convection and writing the second equation as a first-order equation one gets the system:
@@ -1142,8 +1132,12 @@ The journal's eccentricity reads $\varepsilon=\frac{\sqrt{X^2+Y^2}}{c}$. The for
 \setcounter{showSlideNumbers}{0}
 \begin{frame}[noframenumbering]
 \frametitle{Thank you for your attention!}\centering
-
-
+\vspace*{0.8cm}
+\begin{figure}
+	\centering 
+	\def\svgwidth{\textwidth}	
+	\includegraphics[scale=0.4]{grupo_san_carlos.png}
+\end{figure}
 \end{frame}
 %==============================================================
 
