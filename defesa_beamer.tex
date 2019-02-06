@@ -88,13 +88,13 @@
 
 \begin{frame}
 \frametitle{The Reynolds Equation}\bigskip
-To look for the hydrodynamical pressure $p$ such that
+Find the hydrodynamical pressure $p$ such that
 \begin{align*}
-\nabla \cdot \left( \frac{\rho h^3}{12\,\mu} \nabla p \right)- \frac{U}{2}\parder{\rho h }{x_1} &=\parder{\rho h }{t} &&\text{in } \Omega\subset \mathbb{R}^2~,\\
+\nabla \cdot \left( \frac{\rho h^3}{12\,\mu} \nabla p -\frac{\mathbf{U}}{2}\rho h \right) &=\parder{\rho h }{t} &&\text{in } \Omega\subset \mathbb{R}^2~,\\
 p&=p_\partial&&\text{on } \partial \Omega~.
 \end{align*} 
 \begin{itemize}
-	\item $h$, $U$: surfaces' evolution;
+	\item $h$, $\mathbf{U}$: surfaces' evolution;
 	\item $\rho$, $\mu$: fluid' density and viscosity resp.;
 	\item $p_\partial\in \mathbb{R}$.
 \end{itemize}
@@ -143,7 +143,7 @@ p&=p_\partial&&\text{on } \partial \Omega~.
 \begin{frame}
 \frametitle{The Elrod-Adams cavitation model}
 \vspace*{1.0cm}
-To look for the fields $p\geq p_{\text{cav}}$ and $0\leq \theta \leq 1$ such that: $$Q=\frac{h^3}{12\,\mu} \nabla p - \frac{U}{2}h\theta \, \mathbf{e}_1~,$$ accomplishes (+ b.c.): $$\text{div} \left( Q \right) =\parder{h\theta }{t}\qquad \mbox{and}\qquad p(1-\theta)=0 \qquad \mbox{in }  \Omega~.$$
+Find $p\geq p_{\text{cav}}$ and $0\leq \theta \leq 1$ such that: $$Q=\frac{h^3}{12\,\mu} \nabla p - \frac{\mathbf{U}}{2}h\theta~,$$ accomplishes (+ b.c.): $$\text{div} \left( Q \right) =\parder{h\theta }{t}\qquad \mbox{and}\qquad p(1-\theta)=0 \qquad \mbox{in }  \Omega~.$$
 
 \begin{figure}
 	\centering
@@ -225,9 +225,9 @@ subsectionstyle=show/shaded/hide
 \frametitle{Extending the Elrod-Adams model}
 \vspace*{1.0cm}
 \begin{minipage}{0.5\linewidth}
-To look for the fields $p(\textbf{x},t)$ and $\theta(\textbf{x},t)$, $\textbf{x}\in\Omega$ and $t\in[0,t_\textnormal{f}>0]$, such that
+Find $p(\textbf{x},t)$ and $\theta(\textbf{x},t)$, $\textbf{x}\in\Omega$ and $t\in[0,t_\textnormal{f}>0]$, such that
 \begin{align*}
-\nabla\cdot \left( \frac{h^3}{12\,\mu} \nabla p -\frac{U}{2}h\theta\, \mathbf{e}_1\right) &=\parder{h\theta }{t} &&\text{in } \Omega\\
+\nabla\cdot \left( \frac{h^3}{12\,\mu} \nabla p -\frac{\mathbf{U}}{2}h\theta\right) &=\parder{h\theta }{t} &&\text{in } \Omega\\
 p&\geq \only<1>{0}
 \only<2>{{\color{red}T(\theta)}}&&\text{in } \Omega\\
 0\leq \theta &\leq 1&&\text{in } \Omega\\
@@ -277,7 +277,7 @@ p_{i,j}^n&\geq T\left(\bm{\theta}^n\right)_{i,j}~,\\
 0\leq \theta_{i,j}^n&\leq 1~,\\
 \left(p_{i,j}^n-T\left(\bm{\theta}^n\right)_{i,j}\right)\left(1-\theta_{i,j}^n\right)&=0~.
 \end{align*}
-For $T\equiv 0$ and $\pcc\equiv 0$ one gets a system which well-posedness has been proved in the literature along with an algorithm to solve it (Alt, 1980). 
+For $\pcc\equiv 0$ (thus $T\equiv 0$) one gets a system which well-posedness has been proved in the literature along with an algorithm to solve it (Alt, 1980). 
 \end{frame}
 
 %=============================================================
@@ -453,7 +453,7 @@ So we have the relation $p\longrightarrow R$
 \frametitle{A model for the cavitation pressure}
 \begin{minipage}{0.3\textwidth}
 In the equilibrium:
-$$\peq(\Req)=p_\textnormal{b}-\frac{2\sigma}{\Req}~.$$
+$$\peq(\Req)=p_\textnormal{b}(\Req)-\frac{2\sigma}{\Req}~.$$
 The minimum of this curve is called \emph{cavitation pressure}.\\
 
 Notice that in the \emph{stable branch} one has $$\peq'(\Req)<0~.$$
@@ -470,9 +470,9 @@ Notice that in the \emph{stable branch} one has $$\peq'(\Req)<0~.$$
 %==============================================================
 \begin{frame}
 \frametitle{The Reynolds-Rayleigh-Plesset coupling}
-Assuming a mono-disperse bubbles distribution, one looks for the fields $p(\mathbf{x},t)$ and $R(\mathbf{x},t)>0$ such that:
+Assuming a mono-disperse bubbles distribution, find $p(\mathbf{x},t)$ and $R(\mathbf{x},t)>0$ such that:
 \begin{align*}
-\nabla\cdot\left(\frac{\rho\left(\alpha\right) h^3}{12\mu\left(\alpha\right) }\nabla p \right)&=\frac{U}{2}\parder{\rho\left(\alpha\right) h}{x_1}+\parder{\rho\left(\alpha\right) h}{t}&&\alpha \longrightarrow p~,\\
+\nabla\cdot\left(\frac{\rho\left(\alpha\right) h^3}{12\mu\left(\alpha\right) }\nabla p-\frac{\mathbf{U}}{2}\rho\left(\alpha\right) h \right)&=\parder{\rho\left(\alpha\right) h}{t}&&\alpha \longrightarrow p~,\\
 \rho_\ell\left(\frac{3}{2}\left(\parderD{R}{t}\right)^2+R\parderDtwo{R}{t}\right)&=p_b-\frac{2\sigma}{R}-p-\left(\mu_\ell+\frac{\kappa^s}{R}\right)\frac{4}{R}\parderD{R}{t}&&p\longrightarrow R~,\\
 \alpha(R)&=\frac{\mbox{volume of gas}}{\mbox{volume of gas and liquid}}&&R\longrightarrow \alpha~.
 \end{align*}
@@ -487,14 +487,14 @@ along suitable initial conditions.
 
 \begin{frame}
 \frametitle{The abstract problem: full RP equation}
-Disregarding the convection of the field $R$, one looks for the fields $p(\mathbf{x},t)$ and $R(\mathbf{x},t)>0$ such that:
+Disregarding the convection of the field $R$, find $p(\mathbf{x},t)$ and $R(\mathbf{x},t)>0$ such that:
 \begin{equation}
 \underbrace{\frac{3}{2}\frac{1}{R}\left(\parder{R}{t}\right)^2+\frac{\partial^2 R}{\partial t^2}}_{\textnormal{inertial terms}}=\frac{f_1\left(R\right)-p}{R}-\parder{R}{t}f_2\left(R\right)~,\label{eq:abstract-rp1}
 \end{equation}
 and
 \begin{align}
 \begin{split}
-\nabla_x\cdot \left(f_3\left(R\right) h^3\,\nabla p\right)&=\nabla_x\cdot \left(f_4\left(R\right)U\,h\,\right)+h\,f_5\left(R\right)\parder{R}{t},\\
+\nabla_x\cdot \left(f_3\left(R\right) h^3\,\nabla p\right)&=\nabla_x\cdot \left(f_4\left(R\right)\mathbf{U}\,h\,\right)+h\,f_5\left(R\right)\parder{R}{t},\\
 p&=0 \qquad\mbox{on } \partial \Omega~.
 \end{split}
 \label{eq:abstract-reynolds1}
@@ -551,14 +551,14 @@ subsectionstyle=show/shaded/hide
 
 \begin{frame}
 \frametitle{The abstract problem: full RP equation}\vspace*{0.5cm}
-To look for the fields $p(\mathbf{x},t)$ and $R(\mathbf{x},t)>0$ such that:
+Find $p(\mathbf{x},t)$ and $R(\mathbf{x},t)>0$ such that:
 \begin{equation*}
 \frac{3}{2}\frac{1}{R}\left(\parder{R}{t}\right)^2+\frac{\partial^2 R}{\partial t^2}=\frac{f_1\left(R\right)-{\color{red}p}}{R}-\parder{R}{t}f_2\left(R\right)~,
 \end{equation*}
 and
 \begin{align*}
 \begin{split}
-\nabla_x\cdot \left(f_3\left(R\right) h^3\,\nabla p\right)&=\nabla_x\cdot \left(f_4\left(R\right)U\,h\,\right)+h\,f_5\left(R\right)\parder{R}{t}~,\\
+\nabla_x\cdot \left(f_3\left(R\right) h^3\,\nabla p\right)&=\nabla_x\cdot \left(f_4\left(R\right)\mathbf{U}\,h\,\right)+h\,f_5\left(R\right)\parder{R}{t}~,\\
 p&=0 \qquad\mbox{on } \partial \Omega~.
 \end{split}
 \end{align*}
@@ -625,14 +625,14 @@ subsectionstyle=show/shaded/hide
 
 \begin{frame}
 \frametitle{The abstract problem: full RP equation}
-To look for the fields $p(\mathbf{x},t)$ and $R(\mathbf{x},t)>0$ such that:
+Find $p(\mathbf{x},t)$ and $R(\mathbf{x},t)>0$ such that:
 \begin{equation*}
 \frac{3}{2}\frac{1}{R}\left(\parder{R}{t}\right)^2+\frac{\partial^2 R}{\partial t^2}=\frac{f_1\left(R\right)-p}{R}-\parder{R}{t}f_2\left(R\right)~,
 \end{equation*}
 and
 \begin{align*}
 \begin{split}
-\nabla_x\cdot \left(f_3\left(R\right) h^3\,\nabla p\right)&=\nabla_x\cdot \left(f_4\left(R\right)U\,h\,\right)+h\,f_5\left(R\right)\parder{R}{t}~,\\
+\nabla_x\cdot \left(f_3\left(R\right) h^3\,\nabla p\right)&=\nabla_x\cdot \left(f_4\left(R\right)\mathbf{U}\,h\,\right)+h\,f_5\left(R\right)\parder{R}{t}~,\\
 p&=0 \qquad\mbox{on } \partial \Omega~.
 \end{split}
 \end{align*}
@@ -650,13 +650,13 @@ p_s=f_1\left(R_s\right)~.
 \end{equation*}
 Writing $h=h_0+h^+$ with $h_0=\underset{\Omega}{\essinf{\,h}}$, $(R_s,p_s)$ is solution of the system
 \begin{nalign}
-	\nabla\cdot \left(\left(h_0+h^+\right)^3f_3\left(R_s\right)\nabla p_s\right)&=\nabla\cdot\left(U\left(h_0+h^+\right)f_4\left(R_s\right)\right)&&\textnormal{ in } \Omega,\\
+	\nabla\cdot \left(\left(h_0+h^+\right)^3f_3\left(R_s\right)\nabla p_s\right)&=\nabla\cdot\left(\mathbf{U}\left(h_0+h^+\right)f_4\left(R_s\right)\right)&&\textnormal{ in } \Omega,\\
 	p_s&=f_1\left(R_s\right)&&\textnormal{ in } \Omega~,\\
 	R_s&>0&&\textnormal{ in } \Omega~,\\
 	p_s&=0&&\textnormal{ on }\partial \Omega~.
 	\label{eq:problem-stationary}
 \end{nalign}
-Observe that if $U=0$ or $h^+=0$ then $\left(R_s,p_s\right)=\left(\bar{R},0\right)$ is solution of \eqref{eq:problem-stationary}.
+Observe that if $\mathbf{U}=0$ or $h^+=0$ then $\left(R_s,p_s\right)=\left(\bar{R},0\right)$ is solution of \eqref{eq:problem-stationary}.
 
 
 \end{frame} 
@@ -675,14 +675,14 @@ Observe that if $U=0$ or $h^+=0$ then $\left(R_s,p_s\right)=\left(\bar{R},0\righ
 \begin{frame}
 \frametitle{Stationary solutions: existence}
 \begin{theorem}\label{theo:existence_U_fix}
-	Fix $U\in\mathbb{R}^2$ and $h_0>0$. Then there exists $\epsilon\left(U\right)>0$ such that the problem \eqref{eq:problem-stationary} has a unique solution $\left(R_s,p_s\right)$ with $R_s>0$ whenever $\norm{h^+}{\infty}<\epsilon(U)$.\\ {\color{red}Moreover, the solution $\left(R_s,p_s\right)$ depends continuously on $h^+$}.
+	Fix $\mathbf{U}\in\mathbb{R}^2$ and $h_0>0$. Then there exists $\epsilon\left(\mathbf{U}\right)>0$ such that the problem \eqref{eq:problem-stationary} has a unique solution $\left(R_s,p_s\right)$ with $R_s>0$ whenever $\norm{h^+}{\infty}<\epsilon(\mathbf{U})$.\\ {\color{red}Moreover, the solution $\left(R_s,p_s\right)$ depends continuously on $h^+$}.
 \end{theorem}
 \begin{theorem}\label{theo:existence_h_fix}
-	Fix $h\in B_{m_0,M_0}$, $0<m_0<M_0$. Then there exists $\epsilon\left(h\right)>0$ such that the problem \eqref{eq:problem-stationary} has a unique solution $\left(R_s,p_s\right)$ with $R_s>0$ whenever $\norm{U}{}<\epsilon\left(h\right)$.\\  {\color{red}Moreover, the solution $\left(R_s,p_s\right)$ depends continuously on $U$}.
+	Fix $h\in B_{m_0,M_0}$, $0<m_0<M_0$. Then there exists $\epsilon\left(h\right)>0$ such that the problem \eqref{eq:problem-stationary} has a unique solution $\left(R_s,p_s\right)$ with $R_s>0$ whenever $\norm{\mathbf{U}}{}<\epsilon\left(h\right)$.\\  {\color{red}Moreover, the solution $\left(R_s,p_s\right)$ depends continuously on $\mathbf{U}$}.
 \end{theorem}
 \bigskip
 
-Both results follow from the fact that for $U=0$ or $h^+=0$ there exists a trivial solution ($p\equiv0$) and the Implicit Function Theorem.
+Both results follow from the fact that for $\mathbf{U}=0$ or $h^+=0$ there exists a trivial solution ($p\equiv0$) and the Implicit Function Theorem.
 \end{frame} 
 
 %==============================================================
@@ -748,7 +748,7 @@ It is shown that, for some particular cases, the spectrum of $\mathcal{L}_F$ is 
 
 \begin{frame}
 \frametitle{Stability with inertial terms}\vspace*{0.5cm}
-For $h^+=0$ or $U=0$ one has
+For $h^+=0$ or $\mathbf{U}=0$ one has
 \begin{equation}\label{eq:L_F}
 \mathcal{L}_F\left(S_1,S_2\right)=B\begin{pmatrix}
 S_1\\S_2
@@ -759,7 +759,7 @@ S_1\\S_2
 where $B=\begin{pmatrix}0&1\\-b_1&-b_2
 \end{pmatrix}$, $\pi_1(S_1)$ is the solution of:
 \begin{nalign}
-	-b_3\nabla\cdot \left(h^3 \,\nabla \pi_1\left(S_1\right)\right)&=b_4\nabla\cdot \left(UhS_1\right)&&\textnormal{ in }  \Omega~,\\
+	-b_3\nabla\cdot \left(h^3 \,\nabla \pi_1\left(S_1\right)\right)&=b_4\nabla\cdot \left(\mathbf{U}\,hS_1\right)&&\textnormal{ in }  \Omega~,\\
 	\pi_1\left(S_1\right)&=0 &&\textnormal{ on } \partial \Omega~,
 	\label{eq:pi1-triv-case}
 \end{nalign}
@@ -778,13 +778,13 @@ Denote by $\{\lambda_1^B,\lambda_2^B\}$ the set of eigenvalues of $B$ and notice
 \frametitle{Stability with inertial terms}
 \vspace*{0.5cm}
 \begin{lemma}\label{lemma:spec-L_F}
-	Let $h^+=0$ or $U=0$. Then
+	Let $h^+=0$ or $\mathbf{U}=0$. Then
 	\begin{equation}
 	\Sp{\mathcal{L}_F}\subset \Vp{\mathcal{L}_F}\cup \{\lambda_1^B,\lambda_2^B\}.
 	\end{equation}
 	Moreover if $\lambda\in \Vp{\mathcal{L}_F}\setminus\{\lambda_1^B,\lambda_2^B\}$ with associated eigenfunction $\left(S_1,S_2\right)\in\cont^2$ then $\left(S_1,S_2\right)\in\hzero^2$, $S_2=\lambda S_1$ and $S_1$ is solution of the problem
 	\begin{align*}
-	\frac{b_3}{b_r}\xi\left(\lambda\right)\nabla\cdot\left(h^3\nabla S_1\right)&=b_4 U\cdot\nabla\left(hS_1\right)+\lambda\, b_5 h\, S_1 && \textnormal{in }\Omega,\\
+	\frac{b_3}{b_r}\xi\left(\lambda\right)\nabla\cdot\left(h^3\nabla S_1\right)&=b_4\, \mathbf{U}\cdot\nabla\left(hS_1\right)+\lambda\, b_5 h\, S_1 && \textnormal{in }\Omega,\\
 	S_1&=0&&\textnormal{on }\partial\Omega,
 	\end{align*}
 	where $\xi\left(\lambda\right)=\lambda^2+b_2\lambda+b_1$ with roots $\{\lambda_1^B,\lambda_2^B\}$.
@@ -796,19 +796,19 @@ Denote by $\{\lambda_1^B,\lambda_2^B\}$ the set of eigenvalues of $B$ and notice
 
 \begin{frame}
 \frametitle{Stability with inertial terms}
-\begin{theorem}\label{theo:stabilite-avec-inertie-h-fixe} Let $h\in B_{m_0,M_0}$, $0<m_0<M_0$ (as in Theorem \ref{theo:existence_h_fix}). Then there exists $\epsilon\left(h\right)>0$ s.t. if $\norm{U}{\infty}<\epsilon$ the solution $\left(R_s,p_s\right)$ of problem \eqref{eq:problem-stationary} is asymptotically stable for the evolution problem \eqref{eq:problem-rewritten}.
+\begin{theorem}\label{theo:stabilite-avec-inertie-h-fixe} Let $h\in B_{m_0,M_0}$, $0<m_0<M_0$ (as in Theorem \ref{theo:existence_h_fix}). Then there exists $\epsilon\left(h\right)>0$ s.t. if $\norm{\mathbf{U}}{\infty}<\epsilon$ the solution $\left(R_s,p_s\right)$ of problem \eqref{eq:problem-stationary} is asymptotically stable for the evolution problem \eqref{eq:problem-rewritten}.
 \end{theorem}\bigskip
-\textbf{Step 1}: Based in the previous Lemma: it is enough to study $\Vp{\mathcal{L}_F}$, and it is possible to prove that  $\mbox{Re}\left(\lambda\right)<0$ $\forall \lambda \in \Vp{\mathcal{L}_F}$.\\ \bigskip
-\textbf{Step 2}: From Theorem \ref{theo:existence_h_fix} the mapping $U\mapsto R_s\left(U\right)$ is continuous in a neighborhood $V_1\ni 0$ in $\mathbb{R}^2$, thus if $U\rightarrow 0$ in $\mathbb{R}^2$ then $\norm{\textnormal{D}F\left(R_s\left(U\right),0\right)-\textnormal{D}F\left(\bar{R},0\right)}{}\rightarrow 0$ in the space of linear continuous operators from $\cont^2$ into itself. This, plus the continuity of the spectrum give us the result.
+\textbf{Step 1}: Take $\mathbf{U}=0$. Based in the previous Lemma: it is enough to study $\Vp{\mathcal{L}_F}$, and it is possible to prove that  $\mbox{Re}\left(\lambda\right)<0$ $\forall \lambda \in \Vp{\mathcal{L}_F}$.\\ \bigskip
+\textbf{Step 2}: From Theorem \ref{theo:existence_h_fix} the mapping $\mathbf{U}\mapsto R_s\left(\mathbf{U}\right)$ is continuous in a neighborhood $V_1\ni 0$ in $\mathbb{R}^2$, thus if $\mathbf{U}\rightarrow 0$ in $\mathbb{R}^2$ then $\norm{\textnormal{D}F\left(R_s\left(\mathbf{U}\right),0\right)-\textnormal{D}F\left(\bar{R},0\right)}{}\rightarrow 0$ in the space of linear continuous operators from $\cont^2$ into itself. This, plus the continuity of the spectrum give us the result.
 \end{frame}
 
 %==============================================================
 
 \begin{frame}
 \frametitle{Stability with inertial terms}
-\begin{theorem}\label{theo:instabilite-avec-inertie-U-fixe} Set $h^+=0$ and consider the one-dimensional case ($N=1$). Then there exists $M>0$ such that if $\norm{U}{\infty}>M$ the solution $\left(R_s,p_s\right)$ of problem \eqref{eq:problem-stationary} is asymptotically unstable for the evolution problem \eqref{eq:problem-rewritten}.
+\begin{theorem}\label{theo:instabilite-avec-inertie-U-fixe} Set $h^+=0$ and consider the one-dimensional case ($N=1$). Then there exists $M>0$ such that if $\norm{\mathbf{U}}{\infty}>M$ the solution $\left(R_s,p_s\right)$ of problem \eqref{eq:problem-stationary} is asymptotically unstable for the evolution problem \eqref{eq:problem-rewritten}.
 \end{theorem}\bigskip
-It is shown that there exists $\lambda\in \Vp{\mathcal{L}_F}$ such that $\mbox{Re}(\lambda)>0$ for $U$ big enough.
+It is shown that there exists $\lambda\in \Vp{\mathcal{L}_F}$ such that $\mbox{Re}(\lambda)>0$ for $\mathbf{U}$ big enough.
 \end{frame}
 
 %==============================================================
@@ -834,9 +834,9 @@ Notice that the existence theorems (\ref{theo:existence_U_fix}) and (\ref{theo:e
 
 \begin{frame}\frametitle{Stability without inertial terms}
 \begin{theorem} \label{theo:stability-sans-inertie-h-fix}
-	Fix $h\in B_{m_0,M_0}$, $0<m_0<M_0$. Then there exists $\epsilon>0$ s.t. if $\norm{U}{}<\epsilon$ then the solution $\left(R_s,p_s\right)$ of problem \eqref{eq:problem-stationary} is asymptotically stable for the evolution problem \eqref{eq:abstract-reynolds1}-\eqref{eq:abstract-rp-inertialess} along the i.c. $R\left(\cdot,0\right)=r_1$ in $\Omega$
+	Fix $h\in B_{m_0,M_0}$, $0<m_0<M_0$. Then there exists $\epsilon>0$ s.t. if $\norm{\mathbf{U}}{}<\epsilon$ then the solution $\left(R_s,p_s\right)$ of problem \eqref{eq:problem-stationary} is asymptotically stable for the evolution problem \eqref{eq:abstract-reynolds1}-\eqref{eq:abstract-rp-inertialess} along the i.c. $R\left(\cdot,0\right)=r_1$ in $\Omega$
 \end{theorem}
-\begin{theorem}\label{theo:stability-sans-inertie-U-fixe} For every $U\in \mathbb{R}^2$ there exists $\epsilon=\epsilon\left(U\right)>0$ s.t. if $\norm{h^+}{\infty}<\epsilon$, then the solution $\left(R_s,p_s\right)$ of problem \eqref{eq:problem-stationary} is asymptotically stable for the evolution problem \eqref{eq:abstract-reynolds1}-\eqref{eq:abstract-rp-inertialess} along the i.c. $R\left(\cdot,0\right)=r_1$ in $\Omega$
+\begin{theorem}\label{theo:stability-sans-inertie-U-fixe} For every $U\in \mathbb{R}^2$ there exists $\epsilon=\epsilon\left(\mathbf{U}\right)>0$ s.t. if $\norm{h^+}{\infty}<\epsilon$, then the solution $\left(R_s,p_s\right)$ of problem \eqref{eq:problem-stationary} is asymptotically stable for the evolution problem \eqref{eq:abstract-reynolds1}-\eqref{eq:abstract-rp-inertialess} along the i.c. $R\left(\cdot,0\right)=r_1$ in $\Omega$
 \end{theorem}\bigskip
 
 One shows that $\mbox{Re}\left(\lambda\right)<0~\forall \lambda\in \Vp{\mathcal{L}_F}$ based in a result similar to Lemma \ref{lemma:spec-L_F}.\\
@@ -853,9 +853,9 @@ Recall that there is no analogous result of Theorem \ref{theo:stability-sans-ine
 \begin{frame}
 \frametitle{The Reynolds-Rayleigh-Plesset coupling}
 
-To look for the fields $p(\mathbf{x},t)$ and $R(\mathbf{x},t)>0$ such that:
+Find $p(\mathbf{x},t)$ and $R(\mathbf{x},t)>0$ such that:
 \begin{align*}
-\nabla\cdot\left(\frac{\rho\left(\alpha\right) h^3}{12\mu\left(\alpha\right) }\nabla p \right)&=\frac{U}{2}\parder{\rho\left(\alpha\right) h}{x_1}+\parder{\rho\left(\alpha\right) h}{t}&&\alpha \longrightarrow p~,\\
+\nabla\cdot\left(\frac{\rho\left(\alpha\right) h^3}{12\mu\left(\alpha\right) }\nabla p-\frac{\mathbf{U}}{2}\rho\left(\alpha\right) h \right)&=\parder{\rho\left(\alpha\right) h}{t}&&\alpha \longrightarrow p~,\\
 \rho_\ell\left(\frac{3}{2}\left(\parderD{R}{t}\right)^2+R\parderDtwo{R}{t}\right)&=p_b-\frac{2\sigma}{R}-p-\left(\mu_\ell+\frac{\kappa^s}{R}\right)\frac{4}{R}\parderD{R}{t}&&p\longrightarrow R~,\\
 \alpha&=\frac{\mbox{volume of gas}}{\mbox{volume of gas and liquid}}=\alpha\left(R\right)&&R\longrightarrow \alpha~.
 \end{align*}
@@ -865,9 +865,9 @@ To look for the fields $p(\mathbf{x},t)$ and $R(\mathbf{x},t)>0$ such that:
 \begin{frame}[noframenumbering]
 \frametitle{The Reynolds-Rayleigh-Plesset coupling}
 
-To look for the fields $p(\mathbf{x},t)$ and $R(\mathbf{x},t)>0$ such that:
+Find $p(\mathbf{x},t)$ and $R(\mathbf{x},t)>0$ such that:
 \begin{align*}
-\nabla\cdot\left(\frac{\rho\left(R\right) h^3}{12\mu\left(R\right) }\nabla p \right)&=\frac{U}{2}\parder{\rho\left(R\right) h}{x_1}+\parder{\rho\left(R\right) h}{t},\\
+\nabla\cdot\left(\frac{\rho\left(R\right) h^3}{12\mu\left(R\right) }\nabla p -\frac{\mathbf{U}}{2}\rho\left(R\right) h \right)&=\parder{\rho\left(R\right) h}{t},\\
 \rho_\ell\left(\frac{3}{2}\left(\parderD{R}{t}\right)^2+R\parderDtwo{R}{t}\right)&=\underbrace{{\color{red}p_b-\frac{2\sigma}{R}}}_{F(R)}-p-{\underbrace{\color{red}\left(\mu_\ell+\frac{\kappa^s}{R}\right)\frac{4}{R}}_{1/G(R)}}\parderD{R}{t}.
 \end{align*}
 \end{frame} 
@@ -876,9 +876,9 @@ To look for the fields $p(\mathbf{x},t)$ and $R(\mathbf{x},t)>0$ such that:
 \begin{frame}[noframenumbering]
 \frametitle{The Reynolds-Rayleigh-Plesset coupling}
 
-To look for the fields $p(\mathbf{x},t)$ and $R(\mathbf{x},t)>0$ such that:
+Find $p(\mathbf{x},t)$ and $R(\mathbf{x},t)>0$ such that:
 \begin{align*}
-\nabla\cdot\left(\frac{\rho\left(R\right) h^3}{12\mu\left(R\right) }\nabla p \right)&=\frac{U}{2}\parder{\rho\left(R\right) h}{x_1}+\parder{\rho\left(R\right) h}{t},\\
+\nabla\cdot\left(\frac{\rho\left(R\right) h^3}{12\mu\left(R\right) }\nabla p -\frac{\mathbf{U}}{2}\rho\left(R\right) h \right)&=\parder{\rho\left(R\right) h}{t},\\
 \rho_\ell\left(\frac{3}{2}\left(\parderD{R}{t}\right)^2+R\parderDtwo{R}{t}\right)&=F(R)-p-\frac{1}{G(R)}\parderD{R}{t}.
 \end{align*}
 \end{frame} 
@@ -898,9 +898,9 @@ subsectionstyle=show/shaded/hide
 %==============================================================
 
 \begin{frame}\frametitle{Numerics without inertial terms}
-To look for the fields $p(\mathbf{x},t)$ and $R(\mathbf{x},t)>0$ such that:
+Find $p(\mathbf{x},t)$ and $R(\mathbf{x},t)>0$ such that:
 \begin{align*}
-\nabla\cdot\left(\frac{\rho\left(R\right) h^3}{12\mu\left(R\right) }\nabla p \right)&=\frac{U}{2}\parder{\rho\left(R\right) h}{x_1}+{\color{red}\parder{\rho\left(R\right) h}{t}}~,\\
+\nabla\cdot\left(\frac{\rho\left(R\right) h^3}{12\mu\left(R\right) }\nabla p -\frac{\mathbf{U}}{2}\rho\left(R\right) h \right)&={\color{red}\parder{\rho\left(R\right) h}{t}}~,\\
 \parderD{R}{t}&=G(R)\left(F(R)-p\right)~,
 \end{align*}
 a simple discretization like $\parder{\rho\left(R\right) h}{t}\approx \frac{(\rho h)^{n+1}-(\rho h)^{n}}{\Delta t}$ implies an unstable numerical scheme.
@@ -909,9 +909,9 @@ a simple discretization like $\parder{\rho\left(R\right) h}{t}\approx \frac{(\rh
 %==============================================================
 
 \begin{frame}[noframenumbering]\frametitle{Numerics without inertial terms}
-To look for the fields $p(\mathbf{x},t)$ and $R(\mathbf{x},t)>0$ such that:
+Find $p(\mathbf{x},t)$ and $R(\mathbf{x},t)>0$ such that:
 \begin{align*}
-\nabla\cdot\left(\frac{\rho\left(R\right) h^3}{12\mu\left(R\right) }\nabla p \right)&=\frac{U}{2}\parder{\rho\left(R\right) h}{x_1}+{\color{red}\rho\left(R\right)\parder{ h}{t}}+{\color{red}h\rho'\left(R\right)\parder{R}{t}},\\
+\nabla\cdot\left(\frac{\rho\left(R\right) h^3}{12\mu\left(R\right) }\nabla p - \frac{\mathbf{U}}{2}\rho\left(R\right) h \right)&={\color{red}\rho\left(R\right)\parder{ h}{t}}+{\color{red}h\rho'\left(R\right)\parder{R}{t}},\\
 \parderD{R}{t}&=G(R)\left(F(R)-p\right),
 \end{align*}
 \end{frame}
@@ -919,13 +919,13 @@ To look for the fields $p(\mathbf{x},t)$ and $R(\mathbf{x},t)>0$ such that:
 %==============================================================
 
 \begin{frame}[noframenumbering]\frametitle{Numerics without inertial terms}
-To look for the fields $p(\mathbf{x},t)$ and $R(\mathbf{x},t)>0$ such that:
+Find $p(\mathbf{x},t)$ and $R(\mathbf{x},t)>0$ such that:
 \begin{align*}
-\nabla\cdot\left(\frac{\rho\left(R\right) h^3}{12\mu\left(R\right) }\nabla p \right)&=\frac{U}{2}\parder{\rho\left(R\right) h}{x_1}+{\color{red}\rho\left(R\right)\parder{ h}{t}}+{\color{red}h\rho'\left(R\right)\left[G(R)\left(F(R)-p\right)-\mathbf{U}_\tm{b}\cdot \nabla R\right]},\\
-\parder{R}{t}+\mathbf{U}_\tm{b}\cdot \nabla R&=G(R)\left(F(R)-p\right),
+\nabla\cdot\left(\frac{\rho\left(R\right) h^3}{12\mu\left(R\right) }\nabla p -\frac{\mathbf{U}}{2}\rho\left(R\right) h\right)&={\color{red}\rho\left(R\right)\parder{ h}{t}}+{\color{red}h\rho'\left(R\right)\left[G(R)\left(F(R)-p\right)-\mathbf{U}_\tm{b}\cdot \nabla R\right]}~,\\
+\parder{R}{t}+\mathbf{U}_\tm{b}\cdot \nabla R&=G(R)\left(F(R)-p\right)~,
 \end{align*}
 where $\mathbf{U}_\tm{b}=(u,v)$ would depend on $p$. For instance
-$$\mathbf{U}_\tm{b}=-\frac{h^2}{12\mu}\nabla p+\frac{U}{2}\hat{\mathbf{e}}_1$$
+$$\mathbf{U}_\tm{b}=-\frac{h^2}{12\mu}\nabla p+\frac{\mathbf{U}}{2}~.$$
 
 The next discretization of this system is named as \emph{Single-step Method}, published in Tribology International (Jaramillo A, Buscaglia G, 2019).
 \end{frame}
@@ -933,7 +933,7 @@ The next discretization of this system is named as \emph{Single-step Method}, pu
 %==============================================================
 
 \begin{frame}\frametitle{Numerics without inertial terms}\vspace*{0.5cm}
-Knowing $R$ at a certain time $n$, by Finite Volumes one obtains:\\
+Knowing $R$ at a certain time $n$, by Finite Volumes one obtains (setting $\mathbf{U}=(U,0)$):\\
 \bigskip
 \emph{Stage} 1:
 \begin{multline}
@@ -941,7 +941,7 @@ Knowing $R$ at a certain time $n$, by Finite Volumes one obtains:\\
 +\frac{c_{i,j-\frac{1}{2}}\,p^n_{i,j-1}-\left(c_{i,j-\frac{1}{2}}+c_{i,j+\frac{1}{2}}\right)p^n_{i,j}+c_{i,j+\frac{1}{2}}\,p^n_{i,j+1}}{\Delta x_2^2} -h_{i,j}^nK^n_{i,j} G\left(R^n_{i,j}\right) p_{i,j}^n
 \\= \frac{U}{2}\left(\frac{\rho^n_{i,j}h^n_{i,j}-\rho^n_{i-1,j}h^n_{i-1,j}}{\Delta x_1}\right)+\rho^n_{i,j}\left(\textnormal{D}_th\right)^n_{i,j}\\- h^n_{i,j}K^{n}_{i,j}\left(G\left(R_{i,j}^n\right)F\left(R_{i,j}^n\right)-\left(u\,\textnormal{D}_1R\right)^{n}_{i,j}-\left(v\,\textnormal{D}_2R\right)^{n}_{i,j}\right)
 \end{multline}
-Where $\textnormal{D}_th$ is a first order approximation of $\parder{h}{t}$ and the coefficients $K$ depend on the physical model chosen for the gas.
+Where $\textnormal{D}_th$, $\textnormal{D}_1$ and $\textnormal{D}_2$ are first order approximations of $\parder{h}{t}$, $\parder{}{x_1}$ and $\parder{}{x_2}$ resp., and the coefficients $K$ depend on the physical model chosen for the gas.
 \end{frame}
 
 %==============================================================
@@ -986,9 +986,9 @@ subsectionstyle=show/shaded/hide
 \begin{frame}
 \frametitle{The Reynolds-Rayleigh-Plesset coupling}
 
-To look for the fields $p(\mathbf{x},t)$ and $R(\mathbf{x},t)>0$ such that:
+Find $p(\mathbf{x},t)$ and $R(\mathbf{x},t)>0$ such that:
 \begin{align*}
-\nabla\cdot\left(\frac{\rho h^3}{12\mu }\nabla p \right)&=\frac{U}{2}\parder{\rho h}{x_1}+\rho \parder{h}{t}+h \rho'(R)\parder{R}{t}&&R \longrightarrow p~,\\
+\nabla\cdot\left(\frac{\rho h^3}{12\mu }\nabla p-\frac{\mathbf{U}}{2}\rho h \right)&=\rho \parder{h}{t}+h \rho'(R)\parder{R}{t}&&R \longrightarrow p~,\\
 \rho_\ell\left(\frac{3}{2}\left(\parder{R}{t}\right)^2+R\pardertwo{R}{t}\right)&=p_b-\frac{2\sigma}{R}-p-\left(\mu_\ell+\frac{\kappa^s}{R}\right)\frac{4}{R}\parder{R}{t}&&p\longrightarrow R~.
 \end{align*}
 
@@ -999,9 +999,9 @@ Including convection and writing the second equation as a first-order equation o
 \begin{frame}
 \frametitle{The Reynolds-Rayleigh-Plesset coupling}
 \vspace*{0.5cm}
-To look for the fields $p(\mathbf{x},t)$ and $R_1(\mathbf{x},t)>0$ such that:
+Find $p(\mathbf{x},t)$ and $R_1(\mathbf{x},t)>0$ such that:
 \begin{align*}
-\nabla\cdot \left(\frac{\rho h^3}{12\mu}\nabla p\right)&=\frac{U}{2}\parder{\rho h}{x_1}+\rho \parder{h}{t}+h \rho'(R_1)\left(R_2-\mathbf{U}_\textnormal{b}\cdot\nabla R_1\right)~,\\
+\nabla\cdot \left(\frac{\rho h^3}{12\mu}\nabla p-\frac{\mathbf{U}}{2}\rho h\right)&=\rho \parder{h}{t}+h \rho'(R_1)\left(R_2-\mathbf{U}_\textnormal{b}\cdot\nabla R_1\right)~,\\
 \parder{R_1}{t}&=R_2-\mathbf{U}_\textnormal{b}\cdot \nabla R_1~,\\
 \rho_\ell\parder{R_2}{t}&=-\rho_\ell\mathbf{U}_\textnormal{b}\cdot \nabla R_2-\rho_\ell\frac{3}{2}\frac{R_2^2}{R_1}-4\left(\mu_\ell R_1+\kappa^\textnormal{s}\right)\frac{R_2}{R_1^3}+\frac{F(R_1)-p}{R_1}~.
 \end{align*}	
@@ -1019,21 +1019,38 @@ which corresponds to a backward Euler scheme in time.
 
 %==============================================================
 \begin{frame}
-\frametitle{Numerical results: inertial terms relevance}
+\frametitle{Numerical results: comparison with E-A}
+\vspace*{1.0cm}
+\begin{minipage}{0.5\linewidth}
+	\begin{figure}
+	\includegraphics[scale=0.6]{journal_scheme_bw2.pdf}
+\end{figure}
+\end{minipage}%
+\begin{minipage}{0.5\linewidth}
+	\begin{figure}
+		\includegraphics[scale=0.55]{comparison-ea-pressure.pdf}
+	\end{figure}
+\end{minipage}
+\end{frame}  
 
+%==============================================================
+\begin{frame}
+\frametitle{Numerical results: comparison with E-A}
+\begin{minipage}{0.5\linewidth}\vspace*{1.0cm}
+	\begin{figure}
+		\includegraphics[scale=0.6]{journal_scheme_bw2.pdf}
+	\end{figure}
+\end{minipage}%
+\hspace*{0.5cm}
 \begin{minipage}{0.5\linewidth}
 A comparison to look for the inertial terms relevance is made by solving the RRP model coupled with the Newton equation for the journal position $(X,Y)$. The journal is perturbed by applying a periodical force.\\
 
 The journal's eccentricity reads $\varepsilon=\frac{\sqrt{X^2+Y^2}}{c}$. The force applied on the journal is set to
 \begin{equation*}
-\mathbf{W}^\textnormal{a}(t)=\mathbf{W}^{\textnormal{a},\textnormal{c}}+\mathbf{W}^{\textnormal{a},\textnormal{p}}(t)
+\mathbf{W}^\textnormal{a}(t)=\mathbf{W}^{\textnormal{a},\textnormal{c}}+\mathbf{W}^{\textnormal{a},\textnormal{p}}(t)~.
 \end{equation*}
-\end{minipage}%
-\begin{minipage}{0.5\linewidth}\vspace*{1.0cm}
-\begin{figure}
-	\includegraphics[scale=0.6]{journal_scheme_bw2.pdf}
-\end{figure}
-\end{minipage}\vspace*{-0.2cm}
+\end{minipage}
+\vspace*{-0.2cm}
 \begin{figure}
 	\centering 
 	\def\svgwidth{\textwidth}	
@@ -1062,7 +1079,7 @@ The journal's eccentricity reads $\varepsilon=\frac{\sqrt{X^2+Y^2}}{c}$. The for
 \begin{minipage}{.6\linewidth}
 	The friction torque may be computed as
 \begin{equation*}
-\tau(t)=J_\textnormal{r}\int_\Omega\left( \frac{h(x_1,t)}{2}\parder{p}{x_1}+ \frac{\mu\left(R(x_1,t)\right)\,\bar{U}}{h(x_1,t)}\right)d\Omega,
+\tau(t)=J_\textnormal{r}\int_\Omega\left( \frac{h(x_1,t)}{2}\parder{p}{x_1}+ \frac{\mu\left(R(x_1,t)\right){U}}{h(x_1,t)}\right)d\Omega,
 \end{equation*}
 \end{minipage}%
 \begin{minipage}{.5\linewidth}
@@ -1072,7 +1089,7 @@ The journal's eccentricity reads $\varepsilon=\frac{\sqrt{X^2+Y^2}}{c}$. The for
 			\toprule 
 			& A & B & C \\
 			\midrule
-			$\left|\frac{\bar{\tau}_\textnormal{+i}-\bar{\tau}_\textnormal{-i}}{\bar{\tau}_\textnormal{+i}}\right|$ & 0.002& 0.012&0.032 \\
+			$\left|\frac{\bar{\tau}_\textnormal{+i}-\bar{\tau}_\textnormal{-i}}{\bar{\tau}_\textnormal{+i}}\right|$ & 0.2\%& 1.2\% & 3.2\% \\
 			\midrule
 		\end{tabular} 
 	\end{center}
@@ -1085,7 +1102,8 @@ The journal's eccentricity reads $\varepsilon=\frac{\sqrt{X^2+Y^2}}{c}$. The for
 \frametitle{Conclusions}
 \begin{itemize}
 \item By means of a mass-conserving cavitation model, it has been observed that the shape of the pressurized regions in a lubricated device is influenced by the boundary conditions on pressure. This effect cannot be neglected when looking for accurate results on tribological measures prediction, like friction and minimum-film-thickness.
-\item This kind of modeling can be useful to predict blow-by inception from high pressure gradients.
+\item This kind of modeling can be useful to predict blow-by inception from high pressure gradients. This would to look for optimal geometries in the sense of \emph{sealing capacity}.
+
 \end{itemize}
 \end{frame}  
 
@@ -1095,6 +1113,10 @@ The journal's eccentricity reads $\varepsilon=\frac{\sqrt{X^2+Y^2}}{c}$. The for
 \begin{itemize}
 	\item The well-posedness of the RRP coupling (disregarding bubbles convection) has been addressed by means of standard mathematical tools.
 	\item Robust numerical methods for the RRP coupling in both the cases with and without inertial terms have been developed.
+	
+	\item For fast bubbles' dynamics (small $\kappa^s$) the Elrod-Adams model gives results similar to those of the RRP model. This is remarkable considering that the former model is a phenomenological one.
+	
+	\item For a wide spectrum of parameters, the RRP without inertial terms seems to be a good approximation to the full model. However, for certain configurations the inertial terms effects are not negligible.
 \end{itemize}
 \end{frame}  
 
